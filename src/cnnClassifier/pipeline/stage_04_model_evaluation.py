@@ -1,6 +1,9 @@
 from cnnClassifier.config.configuration import ConfigurationManager
+from pathlib import Path
 from cnnClassifier.components.model_evaluation_mlflow import Evaluation
 from cnnClassifier import logger
+
+# from cnnClassifier.components.model_evaluation_mlflow import Evaluation
 
 
 
