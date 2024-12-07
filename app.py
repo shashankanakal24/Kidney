@@ -24,6 +24,34 @@ class ClientApp:
 def home():
     return render_template('index.html')
 
+@app.route('/solution')
+def solution():
+    return render_template('solution.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/experienced')
+def experienced():
+    return render_template('experienced.html')
+
+@app.route('/doctor')
+def doctor():
+    return render_template('doctor.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+@app.route('/intern')
+def intern():
+    return render_template('intern.html')
+
+@app.route('/testimonial')
+def testimonial():
+    return render_template('testimonial.html')
+
 
 
 

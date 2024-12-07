@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>NephroScan</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet" />
+  <!-- nice select -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
+  <!-- datepicker -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css">
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet" />
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="header_top">
+        <div class="container">
+          <div class="contact_nav">
+            <a href="">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                Call : +91 1234567890
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>
+                Email : demo@gmail.com
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>
+                Bengaluru
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="{{ url_for('home') }}">
+              <img src="{{ url_for('static', filename='images/mylogoo.png') }}" alt="">
+            </a>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="d-flex mr-auto flex-column flex-lg-row align-items-center">
+                <ul class="navbar-nav  ">
+                  <li class="nav-item ">
+                    <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('about') }}"> About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('solution') }}">Solution</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('doctor') }}">Doctors Feedback</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('testimonial') }}">Testimonial</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('contact') }}">Contact Us</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="quote_btn-container">
+                <a href="">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  <span>
+                    Login
+                  </span>
+                </a>
+                <a href="">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  <span>
+                    Sign Up
+                  </span>
+                </a>
+                <form class="form-inline">
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+
+
+  <!-- client section -->
+  <section class="upload_section layout_padding" style="padding: 40px 0;">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          <span>Image Uploader</span>
+        </h2>
+      </div>
+      <div class="row align-items-center">
+        <!-- Left: Upload Box -->
+        <div class="col-lg-6">
+          <div class="upload_box" style="text-align: center; margin-top: 20px;">
+            <h5>Upload an Image</h5>
+            <form id="imageUploadForm">
+              <div class="form-group" style="margin-bottom: 20px;">
+                <input type="file" class="form-control-file" id="imageInput" accept="image/*" style="margin-bottom: 10px;">
+              </div>
+              <button type="button" class="btn btn-primary" id="uploadButton" style="padding: 10px 20px; background-color: #007bff; color: #fff; border: none; cursor: pointer;">Upload</button>
+            </form>
+          </div>
+        </div>
+  
+        <!-- Right: Image Display -->
+        <div class="col-lg-6">
+          <div class="image_display" style="text-align: center; margin-top: 20px;">
+            <h5>Uploaded Image</h5>
+            <div id="imagePreview" style="border: 1px solid #ddd; padding: 10px; height: 300px; display: flex; align-items: center; justify-content: center; background-color: #f9f9f9;">
+              <span style="color: #999;">No image uploaded</span>
+            </div>
+            <!-- Classify Button (Initially Hidden) -->
+            <button type="button" id="classifyButton" style="display: none; padding: 10px 20px; background-color: #28a745; color: #fff; border: none; cursor: pointer; margin-top: 20px;">
+              Classify
+            </button>
+            <!-- Text Prompt (Initially Hidden) -->
+            <div id="textPrompt" style="display: none; margin-top: 20px; padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">
+              <p id="promptText" style="color: #333;">Please wait while we process the image...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end client section -->
+
+
+  <!-- info section -->
+  <section class="info_section ">
+    <div class="container">
+      <div class="info_top">
+        <div class="info_logo">
+          <a href="">
+            <img src="{{ url_for('static', filename='images/mylogoo.png') }}" alt="">
+          </a>
+        </div>
+        <div class="info_form">
+          <form action="">
+            <input type="email" placeholder="Your email">
+            <button>
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="info_bottom layout_padding2">
+        <div class="row info_main_row">
+          <div class="col-md-6 col-lg-3">
+            <h5>
+              Address
+            </h5>
+            <div class="info_contact">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Bengaluru
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call +91 1234567890
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope"></i>
+                <span>
+                  demo@gmail.com
+                </span>
+              </a>
+            </div>
+            <div class="social_box">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="info_links">
+              <h5>
+                Useful link
+              </h5>
+              <div class="info_links_menu">
+                <a href="{{ url_for('home') }}">
+                  Home
+                </a>
+                <a href="{{ url_for('about') }}">
+                  About
+                </a>
+                <a href="{{ url_for('solution') }}">
+                  Solution
+                </a>
+                <a href="{{ url_for('doctor') }}">
+                  Doctors Feedback
+                </a>
+                <a class="active" href="{{ url_for('testimonial') }}">
+                  Testimonial
+                </a>
+                <a href="{{ url_for('contact') }}">
+                  Contact us
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="info_post">
+              <h5>
+                LATEST POSTS
+              </h5>
+              <div class="post_box">
+                <div class="img-box">
+                  <img src="{{ url_for('static', filename='images/post1.jpg') }}" alt="">
+                </div>
+                <p>
+                  Normal
+                  distribution
+                </p>
+              </div>
+              <div class="post_box">
+                <div class="img-box">
+                  <img src="{{ url_for('static', filename='images/post2.jpg') }}" alt="">
+                </div>
+                <p>
+                  Normal
+                  distribution
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="info_post">
+              <h5>
+                News
+              </h5>
+              <div class="post_box">
+                <div class="img-box">
+                  <img src="{{ url_for('static', filename='images/post3.jpg') }}" alt="">
+                </div>
+                <p>
+                  Normal
+                  distribution
+                </p>
+              </div>
+              <div class="post_box">
+                <div class="img-box">
+                  <img src="{{ url_for('static', filename='images/post4.png') }}" alt="">
+                </div>
+                <p>
+                  Normal
+                  distribution
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end info_section -->
+
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">SKSJTI</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+  <!-- bootstrap js -->
+  <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+  <!-- nice select -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
+  <!-- owl slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <!-- datepicker -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+  <!-- custom js -->
+  <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+
+</body>
+
+
+<script>
+classifyButton.addEventListener('click', async () => {
+  const file = imageInput.files[0];
+
+  if (file) {
+      // Convert the file to base64
+      const reader = new FileReader();
+      reader.onload = async function (e) {
+          const base64Image = e.target.result.split(',')[1]; // Get base64 data
+
+          // Hide the uploaded image and classify button
+          imagePreview.style.display = 'none';
+          classifyButton.style.display = 'none';
+
+          // Display the text prompt
+          textPrompt.style.display = 'block';
+          promptText.innerText = 'Classifying the image, please wait...';
+
+          try {
+              // Send the base64 image to the Flask backend
+              const response = await fetch('/predict', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({ image: base64Image })
+              });
+
+              if (response.ok) {
+                  const result = await response.json();
+                  promptText.innerText = `Prediction: ${result}`;
+              } else {
+                  promptText.innerText = 'Failed to classify the image. Please try again.';
+              }
+          } catch (error) {
+              console.error('Error:', error);
+              promptText.innerText = 'An error occurred during classification.';
+          }
+      };
+
+      reader.readAsDataURL(file);
+  } else {
+      alert('Please upload an image first.');
+  }
+});
+
+</script>
+
+
+</html>
